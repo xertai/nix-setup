@@ -1,0 +1,9 @@
+---
+- name: Pull all users latest keys
+  ansible.builtin.command: curl -L https://github.com/{{ item }}.keys -o /home/{{ item }}/.ssh/authorized_keys
+  become: yes
+  become_user: "{{ item }}"
+  with_items:
+    - lsdake
+    - sdake
+    - asalkeld

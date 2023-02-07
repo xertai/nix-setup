@@ -1,0 +1,11 @@
+---
+- name: Add all user shells
+  become: yes
+  ansible.builtin.user:
+    shell: /home/linuxbrew/.linuxbrew/bin/fish
+    name: "{{ item }}"
+    groups: sudo
+    append: yes
+  with_items:
+    - "asalkeld"
+    - "lsdake"
